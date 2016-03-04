@@ -1,0 +1,18 @@
+
+* {margin:0;padding:0;border:0;outline:none;}
+
+body {font-family:'Open Sans',arial,sans-serif;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;cursor:pointer;}
+
+
+/* timer */
+#header .time{position:absolute;top:5px;left:5px;}
+#footer .time {position:absolute;left:348px;top:373px;}
+#header .time .name-t {text-align:center;padding:0 0 13px 0;font-size:18px;color:#000;}
+#header .time #timer div {position:relative;background:url(i/button-timer.png) no-repeat 0 0;width:77px;height:86px;line-height:86px;padding:0 3px 0 0;display:inline-block;font-weight:bold;margin:0 0 0 5px;font-size:32px;font-family:arial;text-align:center;color:#fff;}
+#footer .time .name-t {text-align:center;padding:0 0 13px 0;font-size:18px;color:#a7a7a7;}
+#footer .time #timer2 div {position:relative;background:url(i/button-timer.png) no-repeat 0 0;width:77px;height:86px;line-height:86px;padding:0 3px 0 0;display:inline-block;font-weight:bold;margin:0 0 0 5px;font-size:32px;font-family:arial;text-align:center;color:#fff;}
+#footer .time span,#header .time span {position: absolute;width: 72px;text-align: center;left: 50%;margin-left: -34px;top: 81px;text-transform:uppercase;font-weight:300;line-height: 30px;color:#000;font-size:12px;font-family:'Open Sans',arial,sans-serif;}
+#footer .time span {color:#a7a7a7;}
+/* ----- */

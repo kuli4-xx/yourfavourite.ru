@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" >
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+    <title>Таймер обратного отсчета на jQuery</title>
+    
+</head>
+<body>
+<div id="header">
+    <div class="time">
+            <div class="name-t">До конца акции осталось:</div>
+            <div id="timer"><div class="days">0<span>Дни</span></div><div class="hours">10<span>Часы</span></div><div class="mins">43<span>Минуты</span></div><div class="secs">19<span>Секунды</span></div></div>
+        </div>
+        </div>
+<script>
+    // Order CountDown
+    var montharray = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+    function countdown(yr, m, d) {
+        theyear = yr;
+        themonth = m;
+        theday = d
+        var today = new Date()
+        var todayy = today.getYear()
+        var todaym = today.getMonth()
+        var todayd = today.getDate()
+        var todayh = today.getHours()
+        var todaymin = today.getMinutes()
+        var todaysec = today.getSeconds()
+        var todaystring = montharray[todaym] + " " + todayd + ", " + todayy + " " + todayh + ":" + todaymin + ":" + todaysec
+        futurestring = montharray[m - 1] + " " + d + ", " + yr
+        dd = Date.parse(futurestring) - Date.parse(todaystring)
+        dday = Math.floor(dd / (60 * 60 * 1000 * 24) * 1)
+        dhour = Math.floor((dd % (60 * 60 * 1000 * 24)) / (60 * 60 * 1000) * 1)
+        dmin = Math.floor(((dd % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) / (60 * 1000) * 1)
+        dsec = Math.floor((((dd % (60 * 60 * 1000 * 24)) % (60 * 60 * 1000)) % (60 * 1000)) / 1000 * 1)
+
+        dday = 0;
+        var out = "<div class='days'>" + dday + "<span>Дни</span></div>" + "<div class='hours'>" + dhour + "<span>Часы</span></div>" + "<div class='mins'>" + dmin + "<span>Минуты</span></div>" + "<div class='secs'>" + dsec + "<span>Секунды</span></div>";
+
+        if (dday == 0 && dhour == 0 && dmin == 0 && dsec == 1) {
+            $('#timer').html(out);
+            $('#timer2').html(out);
+            return
+        } else {
+            if (dhour < 10) dhour = '0' + dhour;
+            if (dmin < 10) dmin = '0' + dmin;
+            if (dsec < 10) dsec = '0' + dsec;
+        }
+        $('#timer').html(out);
+        $('#timer2').html(out);
+        setTimeout("countdown(theyear,themonth,theday)", 1000)
+    }
+    countdown(2014, 01, 31);
+</script>
+</body>
+</html>
