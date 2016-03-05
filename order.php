@@ -1,4 +1,3 @@
-echo
 <!DOCTYPE html>
 <html lang="ru">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
@@ -24,18 +23,18 @@ echo
         Name: $visitor_name
         Phone: $visitor_phone";
         
-        echo nl2br($msg_body); // for testing
+        //echo nl2br($msg_body); // for testing
         
-        //mail($admin_email, $subject, $msg_body );
+        mail($admin_email, $subject, $msg_body )  ;
     }
 
     sendAdminEmail();
 ?>
 <meta charset="UTF-8" />
 <script language = 'javascript'>
-alert("Ваша заявка успешно отправлена!");
-  var delay =2000;
-  setTimeout("document.location.href='index.html'", delay);
+    //alert("Ваша заявка успешно отправлена!");
+    //var delay =2000;
+    //setTimeout("document.location.href='index.html'", delay);
 </script>
 <div class="wrap_block_success">
     <div class="block_success">
